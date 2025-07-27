@@ -8,6 +8,7 @@ Supported archs:
 - arm
 - armhf
 - riscv64
+- loongarch64
 
 ## Notes about i386
 `-m32` was built and tested, but it is not included, as it requires adding gcc-multilib and I don't recommend doing so, in general.

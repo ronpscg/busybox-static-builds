@@ -13,6 +13,7 @@ ARCHS[riscv64-linux-gnu]=riscv
 ARCHS[arm-linux-gnueabi]=arm
 ARCHS[arm-linux-gnueabihf]=arm
 ARCHS[i686-linux-gnu]=i386
+ARCHS[loongarch64-linux-gnu]=loongarch
 
 : ${MORE_CONFIGURE_FLAGS=""}
 : ${MORE_TUPPLES=""}
@@ -93,7 +94,7 @@ build_with_installing() (
 # It may however need more configuration if you do not build for gnulibc
 build_for_several_tuples() {
 	local failing_tuples=""
-	for tuple in x86_64-linux-gnu aarch64-linux-gnu riscv64-linux-gnu arm-linux-gnueabi arm-linux-gnueabihf i686-linux-gnu $MORE_TUPPLES ; do
+	for tuple in x86_64-linux-gnu aarch64-linux-gnu riscv64-linux-gnu arm-linux-gnueabi arm-linux-gnueabihf i686-linux-gnu loongarch64-linux-gnu $MORE_TUPPLES ; do
 	#for tuple in $MORE_TUPPLES aarch64-linux-gnu ; do
 		echo -e "\x1b[35mConfiguring and building $tuple\x1b[0m"
 		export CROSS_COMPILE=${tuple}- # we'll later strip it but CROSS_COMPILE is super standard, and autotools is "a little less standard"
