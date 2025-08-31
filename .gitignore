@@ -1,0 +1,6 @@
+/*-build/
+
+/err.*
+
+# Could make a submodule instead - doesn't really matter in this context
+/dtc
